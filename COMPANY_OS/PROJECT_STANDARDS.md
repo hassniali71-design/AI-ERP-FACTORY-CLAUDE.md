@@ -1,6 +1,6 @@
 # Project Standards — Project Context Template (Design)
 
-> الحالة: **Draft v0.1** — التصميم فقط. ملفات القالب الفعلية تُبنى في Phase 2 داخل `TEMPLATES/NEW_PROJECT/`.
+> الحالة: **Active v0.1** — مُنفَّذ في [`TEMPLATES/NEW_PROJECT/`](../TEMPLATES/NEW_PROJECT/) (Phase 2، 2026-10-09).
 > المرجع: هيكل `taqseet-erp/docs/` (مجرَّب فعليًا عبر 64 بند عمل). لم يُنسخ أي محتوى منه.
 
 ## 1. مبدأ التوزيع (DEC-0002)
@@ -24,7 +24,9 @@
 ```text
 <project-repo>/
 ├── CLAUDE.md                 ≤ 30 سطر: وصف، Stack، قوانين القراءة، خريطة الملفات، أوامر التحقق
+├── .env.example              أسماء فقط
 └── docs/
+    ├── 00-SPEC.md            Project Specification (Idea → Spec)
     ├── 01-BRIEF.md           الفكرة، المشكلة، العميل/السوق، نوع النظام          ← PROJECT.md (CLAUDE.md §8)
     ├── 02-STACK.md           الـStack وأوامر التشغيل + الانحرافات عن STANDARD_STACK
     ├── 03-STATE.md           الحالة الحقيقية الآن + آخر بند + Known Issues     ← CURRENT_STATE.md
@@ -52,6 +54,6 @@
 
 > **لا يُعاد ترتيب ملفات taqseet-erp الحالية.** القالب للمشاريع الجديدة، والمشاريع القائمة تُكمَّل بالملفات الناقصة فقط عند الحاجة وبموافقة.
 
-## 4. أسئلة مفتوحة قبل Phase 2
+## 4. أسئلة محسومة
 
-- هل Tasks / Reports لكل مشروع تعيش داخل repo المشروع (`docs/tasks/`) أم في الـFactory؟ (توصية: داخل repo المشروع، تماشيًا مع DEC-0002.)
+- ~~أين تعيش Tasks / Reports؟~~ → داخل repo المشروع: `docs/tasks/`, `docs/reports/` (DEC-0013).
