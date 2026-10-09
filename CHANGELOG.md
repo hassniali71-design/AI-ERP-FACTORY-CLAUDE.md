@@ -4,6 +4,33 @@
 
 ---
 
+## 2026-10-09 — taqseet-erp: Commit + دفتر واحد (DEC-0014)
+
+Commits في taqseet-erp: `bd463e4` (Baseline + TASK-0001) و `2984022` (بند 68 / TASK-0002). `main` اتعمله fast-forward والـbranch الجانبي اتمسح محليًا. المالك أكد `/users` شغالة على Production. لا Push.
+
+---
+
+## 2026-10-09 — TASK-0002 (taqseet-erp): فحص أسرار تلقائي بعد كل build
+
+`scripts/check-no-secrets-in-bundle.ts` في `postbuild`: الـbuild/deploy يفشل لو سر سيرفر رايح للمتصفح. 6 اختبارات سلبية بقيم وهمية نجحت + build/lint/tsc نظيفين. غير منشور وغير committed. التقرير: `taqseet-erp/docs/reports/REPORT-TASK-0002.md`.
+**Knowledge:** الفحص ده مرشح يدخل في `TEMPLATES/NEW_PROJECT` لكل مشروع جديد.
+
+---
+
+## 2026-10-09 — TASK-0001 (taqseet-erp): إغلاق تسريب service-role key
+
+أول Task حقيقية عبر الـWorkflow. المالك عمل Rotation؛ Claude نظّف `.env`، تحقق (جديد 200 / قديم 401)، بنى، فحص قبل النشر، نشر (Version `6b2c8bb5`)، وتحقق من Production (0 أسرار). التقرير: `taqseet-erp/docs/reports/REPORT-TASK-0001.md`.
+
+---
+
+## 2026-10-09 — Phase 3: Pilot Baseline (taqseet-erp)
+
+**Task:** PHASE-3 (read-only)
+**Result:** Build ✅ · Lint ✅ · Typecheck ✅ · Finance tests ✅. **🔴 C1:** service-role key مكشوف على Production. لا إصلاحات. التقرير في repo المشروع: `docs/reports/BASELINE-2026-10-09.md`.
+**Factory changes:** تحديث بطاقة taqseet-erp، SECURITY_RULES (checklist + incident). غير committed.
+
+---
+
 ## 2026-10-09 — Phase 2: Templates
 
 **Project:** AI ERP Factory · **Task:** PHASE-2

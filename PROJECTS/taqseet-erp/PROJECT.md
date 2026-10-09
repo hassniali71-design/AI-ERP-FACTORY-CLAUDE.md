@@ -1,7 +1,7 @@
 # Project Card — taqseet-erp
 
-> **Factory Status:** Pilot Project (DEC-0001) · **Current Phase:** Waiting for Phase 3 — Pilot Baseline (read-only)
-> **Card updated:** 2026-10-08
+> **Factory Status:** Pilot Project (DEC-0001) · **Current Phase:** Phase 3 Baseline done · TASK-0001 (C1) ✅ · TASK-0002 (secret guard) ✅ — waiting next task
+> **Card updated:** 2026-10-09
 > هذه بطاقة فقط. **مصدر الحقيقة = repo المشروع** (DEC-0002). لا تنسخ محتوى من الـrepo إلى هنا.
 
 ## Identity
@@ -14,10 +14,10 @@
 | السوق | مصر |
 | Repository | https://github.com/hassniali71-design/taqseet-erp |
 | Local path | `D:\taqseet-erp` |
-| Default branch | `main` |
-| Production URL | **Needs Owner Input** (DEC-0012) |
-| Domain | **Needs Owner Input** (DEC-0012) |
-| Supabase Project ID | **Needs Owner Input** (DEC-0012) — لا يوجد `supabase/config.toml` في الـrepo |
+| Default branch | `main` — الدفتر الوحيد (DEC-0014). محليًا متقدم 5 commits عن GitHub (بانتظار Push) |
+| Production URL | https://hassniali71-design-taqseet-erp.hassniali71.workers.dev (من سجلات Wrangler، 2026-10-09) |
+| Domain | لا دليل على custom domain — `workers.dev` فقط · تأكيد: Needs Owner Input |
+| Supabase Project ID | `vxspiwgzpjctgxpklddy` (عام — موجود في كود العميل) |
 
 ## Stack
 
@@ -44,12 +44,13 @@ Deployment: Cloudflare Workers (`bun run deploy` → `nitro deploy --prebuilt`).
 | قواعد العمل + Routing gotcha | `docs/09-WORKFLOW.md` |
 | Spec كامل | `docs/ERP_SaaS_Requirements.md` (كبير — يُقرأ عند الحاجة فقط) |
 
-## Status Snapshot (2026-10-08)
+## Status Snapshot (2026-10-09 — Baseline)
 
-- آخر بند عمل: **64** (حسب `docs/03-STATE.md`)
-- آخر commit: 2026-09-27
-- Working tree: clean
-- Build/Lint: **Not Tested** في هذه الجلسة
+- آخر بند عمل: **68** · آخر commit: `2984022` (2026-10-09) على `main` (غير مرفوع)
+- آخر Deployment: 2026-10-09 — Version `6b2c8bb5…` (TASK-0001، نفس كود `7ebf3d1` بدون أسرار)
+- Build ✅ · Lint ✅ (0/0) · Typecheck ✅ · Finance tests ✅
+- **Security:** C1 ✅ مُغلق (TASK-0001) · حارس أسرار بعد كل build ✅ (TASK-0002) · `/users` على Production ✅ أكدها المالك. متبقٍ: مراجعة Supabase logs.
+- التقارير: `taqseet-erp/docs/reports/` (BASELINE + REPORT-TASK-0001/0002) — committed في `main`
 
 ## Gaps vs Factory Template
 

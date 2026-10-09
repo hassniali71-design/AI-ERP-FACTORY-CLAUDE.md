@@ -15,7 +15,7 @@
 - [ ] `.env` غير متتبع (`git ls-files .env` فارغ).
 - [ ] `.gitignore` يحتوي `.env` و `.env.*` و `!.env.example`.
 - [ ] `.env.example` موجود بأسماء فقط.
-- [ ] لا يوجد service-role key في كود الـFrontend أو متغيرات `VITE_*`.
+- [ ] لا يوجد service-role key في كود الـFrontend أو متغيرات `VITE_*` — **افحص `.env` المحلي نفسه، وليس `.env.example` فقط**، ثم افحص الـbuild الناتج بحثًا عن `sb_secret_` (درس taqseet-erp C1).
 - [ ] RLS مفعّل على كل الجداول ذات بيانات tenants.
 
 ## Multi-Tenant
@@ -38,3 +38,4 @@
 | التاريخ | المشروع | المشكلة | الحالة |
 |---|---|---|---|
 | 2026-10-08 | superflow-eg | `.env` كان متتبعًا في Git ومرفوعًا على GitHub (مفاتيح publishable/anon فقط) | أُزيل من التتبع محليًا (staged في superflow-eg، بدون commit). يبقى في history — لا rotation ولا rewrite (DEC-0009). **مفتوح** حتى مراجعة RLS. |
+| 2026-10-09 | taqseet-erp | **C1 Critical:** `.env` المحلي يحتوي `VITE_SUPABASE_SERVICE_ROLE_KEY` → المفتاح مُضمَّن في JS العام على Production (تم التحقق بقراءة فقط). | **مُغلق 2026-10-09 (TASK-0001):** مفتاح جديد، القديم ملغى (401)، Production بلا أسرار (Version 6b2c8bb5). متبقٍ: مراجعة Supabase logs. |

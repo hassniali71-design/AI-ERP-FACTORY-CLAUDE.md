@@ -67,3 +67,9 @@
 ### DEC-0013 — Tasks/Reports داخل repo المشروع
 - **DATE:** 2026-10-09 · **STATUS:** Active · يكمّل DEC-0002
 - **DECISION:** التفاصيل الفنية والمهام والتقارير الخاصة بكل مشروع داخل repo المشروع. الـFactory يحتفظ فقط بـ: Project card، Status، Repository reference، Current phase، Important decisions، Operational metadata.
+
+### DEC-0014 — taqseet-erp: دفتر واحد (`main`)
+- **DATE:** 2026-10-09 · **STATUS:** Active
+- **DECISION (المالك):** "خلي دفتر واحد" — `main` هو الـbranch الوحيد للعمل والنشر في taqseet-erp.
+- **ما حدث:** `main` اتعمله fast-forward ليحتوي كل شغل `claude/quirky-shannon-3fv54p` (بنود 65–68 + التقارير) بدون أي conflict، والـbranch الجانبي اتمسح محليًا (كان مطابقًا لـ`main` بنفس الـcommit `2984022`).
+- **CONSEQUENCES:** على GitHub ما زال `origin/main` متأخرًا 5 commits، و`origin/claude/quirky-shannon-3fv54p` موجود — يتحلّوا عند أول Push بموافقة المالك. أي نشر قادم يكون من `main` فقط.
